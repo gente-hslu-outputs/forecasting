@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forecaster"            
+version = "1.0.9"
+dependencies = [
+  "numpy",
+  "pandas",
+  "tensorflow",
+  "keras",
+  "databaseaccessor",
+]
+description = "Different Forecasters for the GENTE Project"
+requires-python = ">=3.9"
+
+authors = [
+    {name = "Fabian Widmer", email = "fabian.widmer@hslu.ch"},
+]
+
+[project.urls]
+"Repository" = "https://gitlab.com/draimundo_hslu/GENTE_db/-/tree/main/Loggers?ref_type=heads"
+
+[tool.setuptools]
+packages = ["forecaster","forecaster.models", "forecaster.utils"]
+
+[tool.setuptools.package-dir]
+forecaster = "src/forecaster"
+
+[tool.black]
+line-length = 88
+target-version = ['py37', 'py38', 'py39', 'py310']
+
+
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "pylint",
+  "mypy",
+]
+
+# test = [
+#     "pytest",
+#     "pytest-cov",
+#     "deepdiff",
+# ]
+
+# plot = [
+#     "streamlit",
+#     "plotly",
+# ]
+
+# [tool.pytest.ini_options]
+# pythonpath = "src"
